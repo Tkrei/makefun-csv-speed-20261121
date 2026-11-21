@@ -3,7 +3,7 @@ import { join } from 'node:path';
 import { setFlagsFromString } from 'node:v8';
 
 // Use the same GC tuning as the published baseline, before loading the parser.
-setFlagsFromString('--no-incremental-marking');
+setFlagsFromString('--no-incremental-marking --no-opt');
 const { run } = await import('./solve.js');
 
 const inputDir = process.env.MAKEFUN_INPUT_DIR ?? '/input';
